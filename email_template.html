@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; line-height:1.4; color:#111; padding:16px; }
+      .card { border-radius:10px; padding:14px; margin-bottom:12px; box-shadow:0 2px 6px rgba(0,0,0,0.06); background:#fff; }
+      h1 { margin:0 0 8px 0; font-size:20px; }
+      h2 { margin: 0 0 6px 0; font-size:16px; }
+      .meta { color:#666; font-size:12px; }
+      a { color:#1a73e8; text-decoration:none; }
+      .topic { margin-top:8px; margin-bottom:6px; font-weight:600; }
+      .snippet { margin-top:6px; }
+      .footer { color:#888; font-size:12px; margin-top:12px; }
+    </style>
+  </head>
+  <body>
+    <div style="max-width:720px;margin:0 auto;">
+      <div class="card">
+        <h1>Global Business & Tech Digest — {{ generated_at }}</h1>
+        <div class="meta">Top stories: {{ total_stories }} • Timezone: {{ timezone }}</div>
+      </div>
+
+      {% for topic, items in stories.items() %}
+      <div class="card">
+        <div class="topic">📌 {{ topic }}</div>
+        {% for it in items %}
+        <div style="margin-bottom:12px;">
+          <h2><a href="{{ it.url }}">{{ it.title }}</a></h2>
+          <div class="meta">{{ it.source }} • {{ it.published }}</div>
+          <div class="snippet">{{ it.summary }}</div>
+          <div class="meta">Sentiment: {{ it.sentiment }} • Relevance score: {{ it.score }}</div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+
+      <div class="footer card">
+        You can change sources & frequency in your config. Reply to this email to suggest sources.
+      </div>
+    </div>
+  </body>
+</html>

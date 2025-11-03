@@ -1,0 +1,10 @@
+requests==2.31.0
+python-dotenv==1.0.0
+openai==1.0.0
+feedparser==6.0.10
+sendgrid==6.13.0
+Jinja2==3.1.2
+ujson==5.8.0
+sqlalchemy==2.0.20
+dateparser==1.1.9
+python-dateutil==2.8.2
