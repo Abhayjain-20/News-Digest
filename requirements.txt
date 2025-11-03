@@ -6,6 +6,7 @@ sendgrid==6.12.5
 Jinja2==3.1.2
 ujson==5.8.0
 sqlalchemy==2.0.20
-dateparser==1.1.9
+dateparser==1.2.0
 
 python-dateutil==2.8.2
+
